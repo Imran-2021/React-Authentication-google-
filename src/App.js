@@ -37,7 +37,12 @@ const handleSignIn=()=>{
   return (
     <div style={{padding: '10px', margin:"20px"}}>
     <h3>react authentication..!!!</h3>
-    <button onClick={handleSignIn} style={{cursor:"pointer"}}>Sign In with Google</button> <br /> <br />
+    {/* <button onClick={handleSignIn} style={{cursor:"pointer"}}>Sign In with Google</button>
+    <button style={{marginLeft:"10px"}} onClick={()=>setUser(" ")}>signout</button> <br /> */}
+    {
+      isSignIn ? <button style={{marginLeft:"10px"}} onClick={()=>setUser(" ")}>signout</button> : <button onClick={handleSignIn} style={{cursor:"pointer"}}>Sign In with Google</button>
+    }
+    <br /> <br />
     {
       isSignIn && <div>
      <img src={photo} alt="" />
@@ -45,6 +50,7 @@ const handleSignIn=()=>{
     <p>Email :- {email}</p> 
       </div>
     }
+    
     </div>
   );
 }
